@@ -1,18 +1,18 @@
 var buttons = document.querySelectorAll(".toggle");
 
 function handleClick(button){
-    var answer = button.nextElementSibling;
+    var answer = button.parentNode.nextElementSibling;
     answer.classList.toggle("show-answer");
     var isOpen = answer.classList.contains("show-answer");
 
     if(isOpen) {
-        button.innerHTML = "fechar"
+        button.innerHTML = "-"
     } else {
-        button.innerHTML = "abrir"
+        button.innerHTML = "+"
     }
 }
 
 buttons.forEach(button => {
     button.addEventListener("click", function(){ handleClick(button) });
-    
 });
+
